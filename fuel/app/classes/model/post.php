@@ -58,4 +58,12 @@ class Model_Post extends \Orm\Model
 	protected static $_belongs_to = array(
 	);
 
+	public static function validate($fieldset){
+		$val = Validation::forge($fieldset);
+		$val->add_field("title", "Title", "required");
+		$val->add_field("body", "Description", "required");
+
+		return $val;
+	}
+
 }

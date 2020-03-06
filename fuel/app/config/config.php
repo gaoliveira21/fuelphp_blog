@@ -369,9 +369,9 @@ return array(
 	 *
 	 */
 
-	// 'validation' => array(
-		// 'global_input_fallback' => true,
-	// ),
+	'validation' => array(
+		'global_input_fallback' => true,
+	),
 
 	/**
 	 * -------------------------------------------------------------------------

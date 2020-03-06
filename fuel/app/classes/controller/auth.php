@@ -9,7 +9,9 @@ class Controller_Auth extends Controller_Template
 			
 			if(Auth::login(Input::param('email'), Input::param('password'))){
 				Response::redirect('/posts/index');
-			} 
+			} else {
+				Session::set_flash('error', "Usuário inexistente ou senha inválida.");
+			}
 			
 		}
 
