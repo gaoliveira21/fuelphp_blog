@@ -12,7 +12,8 @@
 <hr>
 <div class="col-sm-12">
     <?php  
-        foreach ($posts as $post) {
+        if(count($posts) > 0) {
+            foreach ($posts as $post) {
     ?>
         <div class="card col-sm-4">
             <div class="card-body">
@@ -26,6 +27,13 @@
             </div>
         </div>
     <?php 
-        } 
+            } 
+        } else {
+            echo "
+                <div class='alert alert-info col-sm-12 text-center' role='alert'>
+                    <b>Nenhum post publicado.</b>
+                </div>
+            ";
+        }
     ?>
 </div>

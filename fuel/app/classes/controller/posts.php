@@ -4,7 +4,7 @@ class Controller_Posts extends Controller_Template
 {
 
 	public function __construct(){
-		if(!Auth::get('id')) Response::redirect('/login');
+		if(!Auth::check()) Response::redirect('/login');
 	}
 
 	public function action_create()
@@ -39,9 +39,6 @@ class Controller_Posts extends Controller_Template
 
 	public function action_index()
 	{
-
-		if(!Auth::get('id')) Response::redirect('/login');
-
 		$data['posts'] = Model_Post::find('all', array(
 			'where' => array(
 				array('user_id', Auth::get('id'))

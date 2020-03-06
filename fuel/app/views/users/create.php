@@ -16,11 +16,15 @@
 	<div class="form-group">
 		<?php
 			echo Form::label('Password', 'password');
-			echo Form::input('password', null, array('class' => 'form-control'))
+			echo Form::input('password', null, array('class' => 'form-control', 'type' => 'password'));
 		?>
 	</div>
 	<div class="col-sm-12 ml-auto", style="padding: 0">
-		<?= Form::button('Create', null, array('class' => 'btn btn-primary btn-block', 'type' => 'submit')) ?>
+		<?= Form::button('Create', null, array('class' => 'btn btn-primary', 'type' => 'submit')); ?>
 	</div>
 	<?= Form::close(); ?>
+
+	<div class="col-sm-12", style="margin-top: 10px">
+		<?= Html::anchor('/login', 'Login'); ?>
+	</div>
 </div>
