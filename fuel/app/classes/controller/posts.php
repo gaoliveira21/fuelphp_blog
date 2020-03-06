@@ -3,6 +3,10 @@
 class Controller_Posts extends Controller_Template
 {
 
+	public function __construct(){
+		if(!Auth::get('id')) Response::redirect('/login');
+	}
+
 	public function action_create()
 	{
 		if (Input::method() == 'POST') {
@@ -35,11 +39,13 @@ class Controller_Posts extends Controller_Template
 
 	public function action_index()
 	{
+
+		if(!Auth::get('id')) Response::redirect('/login');
+
 		$data['posts'] = Model_Post::find('all', array(
 			'where' => array(
 				array('user_id', Auth::get('id'))
 			),
-			
 		));
 		$this->template->title = 'Posts';
 		$this->template->content = View::forge('posts/index', $data);

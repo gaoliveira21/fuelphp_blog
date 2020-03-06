@@ -13,6 +13,12 @@
 				echo Form::input('password', null, array('class' => 'form-control', 'type' => 'password'));
 			?>
 		</div>
+		<div class="form-group">
+			<?php 
+				echo Form::checkbox('remember', true, false);
+				echo Form::label('Remember me', 'remember', array('style' => 'margin-left: 5px'));
+			?>
+		</div>
 		<div class="col-sm-6" style="padding: 0">
 			<?= Form::button('Login', null, array('class' => 'btn btn-primary', 'type' => 'submit')); ?>
 		</div>
